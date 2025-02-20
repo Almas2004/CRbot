@@ -81,6 +81,7 @@ def update_usage(chat_id):
 @bot.message_handler(commands=['start'])
 def start(message):
     chat_id = message.chat.id
+    # chat_id = '1321982385'
     message_id = message.message_id
 
     # Проверка количества использований пользователя
@@ -308,7 +309,7 @@ def ask_bank_status(message):
     chat_id = message.chat.id
     language = user_data[chat_id]['language']
     markup = types.InlineKeyboardMarkup()
-    btn1 = types.InlineKeyboardButton('Да' if language == 'russian' else 'Иә', callback_data='bank_yes')
+    btn1 = types.InlineKeyboardButton('Да' if language == 'russian' else 'Иә', callback_data='bank_no')
     btn2 = types.InlineKeyboardButton('Нет' if language == 'russian' else 'Жоқ', callback_data='bank_no')
     markup.add(btn1, btn2)
 
